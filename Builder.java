@@ -119,22 +119,5 @@ public class Builder<T> {
         enhancer.setSuperclass(clazz);
         return (T) enhancer.create();
     }
-    
-    public static void main(String[] args) {
-		User user = Builder.of(User.class)
-		.on(u -> u.getId()).set(10l)
-		.on(u -> u.getFirstName()).set("first name")
-		.build();
-		System.out.println(user);
-		
-		User user2 = Builder.of(User.class, user)
-				.on(u -> u.getLastName()).set("last name")
-				.build();
-		System.out.println(user2);
-		
-		
-		
-	}
-
 
 }
